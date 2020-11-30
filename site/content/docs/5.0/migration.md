@@ -17,6 +17,14 @@ toc: true
 
 - Renamed `scale-color()` function to `shift-color()` to avoid collision with Sass's own color scaling function.
 
+### Utilities
+
+- Added new `.translate-middle-x` & `.translate-middle-y` utilities to horizontally or vertically center absolute/fixed positioned elements.
+
+### Toasts
+
+- Toasts can now be [positioned]({{< docsref "/components/toasts#placement" >}}) in a `.toast-container` with the help of [positioning utilities]({{< docsref "/utilities/position" >}}).
+
 ## v5.0.0-alpha3
 
 ### Browser support
