@@ -76,6 +76,9 @@ const SELECTOR_INDICATORS = '.carousel-indicators'
 const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]'
 const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]'
 
+const POINTER_TYPE_TOUCH = 'touch'
+const POINTER_TYPE_PEN = 'pen'
+
 const Default = {
   interval: 5000,
   keyboard: true,
@@ -93,10 +96,6 @@ const DefaultType = {
   wrap: 'boolean',
   touch: 'boolean'
 }
-
-const PointerType = {
-  TOUCH: 'touch',
-  PEN: 'pen'
 
 /**
  * ------------------------------------------------------------------------
@@ -279,7 +278,7 @@ class Carousel extends BaseComponent {
 
   _addTouchEventListeners() {
     const start = event => {
-      if (this._pointerEvent && PointerType[event.pointerType.toUpperCase()]) {
+      if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
         this.touchStartX = event.clientX
       } else if (!this._pointerEvent) {
         this.touchStartX = event.touches[0].clientX
@@ -296,7 +295,7 @@ class Carousel extends BaseComponent {
     }
 
     const end = event => {
-      if (this._pointerEvent && PointerType[event.pointerType.toUpperCase()]) {
+      if (this._pointerEvent && (event.pointerType === POINTER_TYPE_PEN || event.pointerType === POINTER_TYPE_TOUCH)) {
         this.touchDeltaX = event.clientX - this.touchStartX
       }
 
