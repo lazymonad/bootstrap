@@ -34,16 +34,6 @@ const DATA_KEY = 'bs.collapse'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
 
-const Default = {
-  toggle: true,
-  parent: ''
-}
-
-const DefaultType = {
-  toggle: 'boolean',
-  parent: '(string|element)'
-}
-
 const EVENT_SHOW = `show${EVENT_KEY}`
 const EVENT_SHOWN = `shown${EVENT_KEY}`
 const EVENT_HIDE = `hide${EVENT_KEY}`
@@ -55,11 +45,21 @@ const CLASS_NAME_COLLAPSE = 'collapse'
 const CLASS_NAME_COLLAPSING = 'collapsing'
 const CLASS_NAME_COLLAPSED = 'collapsed'
 
+const SELECTOR_ACTIVES = '.show, .collapsing'
+const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="collapse"]'
+
 const WIDTH = 'width'
 const HEIGHT = 'height'
 
-const SELECTOR_ACTIVES = '.show, .collapsing'
-const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="collapse"]'
+const Default = {
+  toggle: true,
+  parent: ''
+}
+
+const DefaultType = {
+  toggle: 'boolean',
+  parent: '(string|element)'
+}
 
 /**
  * ------------------------------------------------------------------------

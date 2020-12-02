@@ -40,11 +40,7 @@ const CLASS_NAME_HIDE = 'hide'
 const CLASS_NAME_SHOW = 'show'
 const CLASS_NAME_SHOWING = 'showing'
 
-const DefaultType = {
-  animation: 'boolean',
-  autohide: 'boolean',
-  delay: 'number'
-}
+const SELECTOR_DATA_DISMISS = '[data-bs-dismiss="toast"]'
 
 const Default = {
   animation: true,
@@ -52,7 +48,11 @@ const Default = {
   delay: 5000
 }
 
-const SELECTOR_DATA_DISMISS = '[data-bs-dismiss="toast"]'
+const DefaultType = {
+  animation: 'boolean',
+  autohide: 'boolean',
+  delay: 'number'
+}
 
 /**
  * ------------------------------------------------------------------------
